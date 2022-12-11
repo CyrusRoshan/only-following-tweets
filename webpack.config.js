@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   mode: process.env.NODE_ENV,
-  entry: './src/background.ts',
+  entry: './src/main.ts',
   module: {
     rules: [
       {
@@ -16,7 +16,7 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js'],
   },
   output: {
-    filename: 'background.js',
+    filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
   },
   devtool: 'source-map',

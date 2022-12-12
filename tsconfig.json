@@ -4,7 +4,9 @@
     "module": "es6",
     "moduleResolution": "node",
     "outDir": "./dist",
-    "lib": ["DOM", "DOM.Iterable"]
+    "lib": ["DOM", "DOM.Iterable"],
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true
   },
   "include": ["./src"]
 }

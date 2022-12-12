@@ -4,18 +4,25 @@
   "description": "Make your timeline only show tweets from the people you follow.",
   "private": true,
   "scripts": {
-    "make": "rm -r dist; webpack --config=webpack.config.js && cp manifest.json ./dist && cp -r ./assets ./dist",
+    "copy-assets": "cp ./src/*.html ./dist && cp manifest.json ./dist && cp -r ./assets ./dist",
+    "make": "rm -r dist/*; webpack --config=webpack.config.js && yarn copy-assets",
     "build": "NODE_ENV=production yarn make",
-    "dev": "nodemon --watch ./src --ext ts --exec NODE_ENV=development yarn make"
+    "dev": "nodemon --watch ./src --ext '*' --exec NODE_ENV=development yarn make"
   },
   "author": "Cyrus Roshan",
   "license": "MIT",
   "devDependencies": {
     "@types/chrome": "^0.0.200",
+    "@types/react": "^18.0.26",
+    "@types/react-dom": "^18.0.9",
     "nodemon": "^2.0.20",
     "ts-loader": "^9.4.2",
     "typescript": "^4.9.4",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }

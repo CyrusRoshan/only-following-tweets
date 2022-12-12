@@ -43,7 +43,9 @@ function hideAllUnfollowedTweets() {
 
   notFollowedTweetContexts.map((tweetContext) => {
     const tweet = tweetContext.closest(TWEET_SELECTOR) as HTMLElement;
-    tweet.style.display = 'none';
+
+    tweet.style['key'];
+    //
     console.log('Hid not-followed tweet', tweet);
   });
 }

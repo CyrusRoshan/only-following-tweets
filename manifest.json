@@ -6,10 +6,15 @@
   "icons": {
     "128": "./assets/logo_128.png"
   },
+  "action": {
+    "default_title": "Configure Options",
+    "default_popup": "popup.html"
+  },
+  "permissions": ["storage"],
   "content_scripts": [
     {
       "matches": ["*://*.twitter.com/*"],
-      "js": ["main.js"],
+      "js": ["content.js"],
       "all_frames": true,
       "run_at": "document_idle"
     }

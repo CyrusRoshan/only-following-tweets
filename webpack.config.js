@@ -2,7 +2,11 @@ const path = require('path');
 
 module.exports = {
   mode: process.env.NODE_ENV,
-  entry: './src/main.ts',
+  entry: { content: './src/content', popup: './src/popup' },
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].js',
+  },
   module: {
     rules: [
       {
@@ -14,10 +18,6 @@ module.exports = {
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
-  },
-  output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, 'dist'),
   },
   devtool: 'source-map',
 };

@@ -1,3 +1,5 @@
+import { getStyleChanges } from './stylechanges';
+
 /** Removes console logs when loaded locally.
  * This does not affect the host page, because content
  * scripts are isolated.
@@ -31,6 +33,11 @@ const observer = new MutationObserver((mutationList) => {
 
 observer.observe(document.body, { childList: true, subtree: true });
 
+let styleChanges = {};
+getStyleChanges().then((changes) => {
+  styleChanges = changes;
+});
+
 const TWEET_SELECTOR = `[data-testid="cellInnerDiv"]`;
 const SOCIAL_CONTEXT_SELECTOR = `[data-testid="socialContext"]`; // the reason a tweet was shown in timeline, i.e.: you weren't following the tweeter.
 
@@ -44,8 +51,9 @@ function hideAllUnfollowedTweets() {
   notFollowedTweetContexts.map((tweetContext) => {
     const tweet = tweetContext.closest(TWEET_SELECTOR) as HTMLElement;
 
-    tweet.style['key'];
-    //
+    for (const key in styleChanges) {
+      tweet.style[key] = styleChanges[key];
+    }
     console.log('Hid not-followed tweet', tweet);
   });
 }

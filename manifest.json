@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Only Following Tweets",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Make your timeline only show tweets from the people you follow.",
   "icons": {
     "128": "./assets/logo_128.png"

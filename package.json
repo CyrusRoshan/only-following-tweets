@@ -1,6 +1,6 @@
 {
   "name": "only-following-tweets",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Make your timeline only show tweets from the people you follow.",
   "private": true,
   "scripts": {
